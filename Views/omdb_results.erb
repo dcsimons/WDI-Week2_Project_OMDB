@@ -1,0 +1,12 @@
+<head><title>RESULTS: The Great Movie Search</title></head>
+
+	<h1>The Great Movie Search<br>RESULTS<br></h1>
+		<ul>
+			<% @movie_array.each do |movie| %>
+				<li><a href='/movie-info/<%= movie["imdbID"]%>'>
+						Title: <%= movie["Title"] %><br>
+						Year: <%= movie["Year"] %><br><br>
+				</a></li>
+			<% end %>
+		</ul>
+

@@ -1,0 +1,17 @@
+<head><title>MOVIE INFO: The Great Movie Search</title></head>
+
+	<h1><%= @movie_result["Title"] %></h1><br>
+	<a href='http://www.imdb.com/title/<%= @movie_result["imdbID"]%>'>
+	<img src=<%= @movie_result["Poster"] %>/></a>
+	<p>
+		Year:  <%= @movie_result["Year"] %><br>
+		Rated:  <%= @movie_result["Rated"] %><br>
+		Runtime:  <%= @movie_result["Runtime"] %><br>
+		Genre:  <%= @movie_result["Genre"] %><br>
+		Director:  <%= @movie_result["Director"] %><br>
+		Actors:  <%= @movie_result["Actors"] %><br>
+		Plot:  <%= @movie_result["Plot"] %><br>
+		IMDB:  <a href='http://www.imdb.com/title/<%= @movie_result["imdbID"]%>'><%= @movie_result["Title"]%></a><br>
+	</p>
+
+	<button><a href="/">NEW SEARCH</a><br></button>
