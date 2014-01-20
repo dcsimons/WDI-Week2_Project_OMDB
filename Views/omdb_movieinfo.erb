@@ -1,17 +1,28 @@
-<head><title>MOVIE INFO: The Great Movie Search</title></head>
+<title>MOVIE INFO: The Great Movie Search</title>
 
-	<h1><%= @movie_result["Title"] %></h1><br>
-	<a href='http://www.imdb.com/title/<%= @movie_result["imdbID"]%>'>
-	<img src=<%= @movie_result["Poster"] %>/></a>
-	<p>
-		Year:  <%= @movie_result["Year"] %><br>
-		Rated:  <%= @movie_result["Rated"] %><br>
-		Runtime:  <%= @movie_result["Runtime"] %><br>
-		Genre:  <%= @movie_result["Genre"] %><br>
-		Director:  <%= @movie_result["Director"] %><br>
-		Actors:  <%= @movie_result["Actors"] %><br>
-		Plot:  <%= @movie_result["Plot"] %><br>
-		IMDB:  <a href='http://www.imdb.com/title/<%= @movie_result["imdbID"]%>'><%= @movie_result["Title"]%></a><br>
-	</p>
+<body class="info-body">
+<div class="containter info-container">
+	<h1>
+		<a class="info-h1" href='http://www.imdb.com/title/<%= @movie_result["imdbID"]%>'>
+		<%= @movie_result["Title"] %> (<%= @movie_result["Year"] %>)
+	</h1><br>
+	<div class="container row col-xs-12 col-sm-12 col-md-3 col-lg-3 center">
+		<a href='http://www.imdb.com/title/<%= @movie_result["imdbID"]%>'>
+		<img class="poster" src=<%= @movie_result["Poster"] %>/></a>
+	</div>
+	<div class="container row col-xs-12 col-sm-12 col-md-9 col-lg-9">
+		<p class="detail">
+			Year:  <%= @movie_result["Year"] %><br>
+			Rated:  <%= @movie_result["Rated"] %><br>
+			Runtime:  <%= @movie_result["Runtime"] %><br>
+			Genre:  <%= @movie_result["Genre"] %><br>
+			Director:  <%= @movie_result["Director"] %><br>
+			Actors:  <%= @movie_result["Actors"] %><br>
+			Plot:  <%= @movie_result["Plot"] %><br>
+			IMDB:  <a class="detail" href='http://www.imdb.com/title/<%= @movie_result["imdbID"]%>'><%= @movie_result["Title"]%></a><br>
+		</p>
+	</div>
 
-	<button><a href="/">NEW SEARCH</a><br></button>
+	<button type="button" class="btn btn-primary"><a href="/">NEW SEARCH</a></button><br><br><br><br>
+</div>
+</body>

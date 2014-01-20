@@ -15,9 +15,12 @@ post '/results' do
   response = Typhoeus.get("www.omdbapi.com", :params => {:s => search_str})
   result = JSON.parse(response.body)
 
-  @movie_array = result["Search"].sort_by { |movie| movie["Year"] }
-
-  erb :omdb_results
+  if result["Search"] == nil
+    erb :omdb_index
+  else  
+    @movie_array = result["Search"].sort_by { |movie| movie["Year"] }.reverse
+    erb :omdb_results
+  end    
 
 end
 

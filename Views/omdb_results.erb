@@ -1,12 +1,23 @@
-<head><title>RESULTS: The Great Movie Search</title></head>
+<title>RESULTS: The Great Movie Search</title>
 
-	<h1>The Great Movie Search<br>RESULTS<br></h1>
-		<ul>
-			<% @movie_array.each do |movie| %>
-				<li><a href='/movie-info/<%= movie["imdbID"]%>'>
-						Title: <%= movie["Title"] %><br>
-						Year: <%= movie["Year"] %><br><br>
-				</a></li>
-			<% end %>
-		</ul>
+<body class="results-body">
+<div class="container results-container">
+	<h1 class="results-h1 center">NOW PLAYING<br><br></h1>
+		
+		<% @movie_array.each do |movie| %>
+			<a href='/movie-info/<%= movie["imdbID"]%>'>
+				<div class="container row col-xs-6 col-sm-6 col-md-6 col-lg-6 marquee left">
+					<%= movie["Title"] %>
+				</div>
+				<div class="container row col-xs-6 col-sm-6 col-md-6 col-lg-6 marquee center">
+					<%= movie["Year"] %><br>
+				</div>
+			</a>
+		<% end %>
+
+	<br><br><button class="btn btn-primary"><a href="/">NEW SEARCH</a></button><br><br>
+
+</div>
+</body>
+		
 
